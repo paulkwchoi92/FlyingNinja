@@ -17,9 +17,9 @@ export default class BackGround {
       this.ctx.drawImage(
         this.movingRocksArr[i].rock,
         this.movingRocksArr[i].x,
-        580,
-        100,
-        100
+        540,
+        300,
+        300
         
       );
       this.movingRocksArr[i].x-=4 ;

@@ -51,9 +51,9 @@ export default class FlyingNinja {
       const bg = document.getElementById("background");
 
       this.ctx.drawImage(bg, 0, 0);
-      this.ninja.animate();
       this.background.animate();
       this.enemy.animate();
+      this.ninja.animate();
       this.game.animate()
     } else {
       // this.begScreenAudio()
