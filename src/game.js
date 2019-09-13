@@ -1,24 +1,12 @@
 export default class Game {
-  constructor() {
-    this.start = false;
-    this.renderKeys = false;
+  constructor(ctx) {
+    this.ctx = ctx
     this.point = 0;
     this.level = 1;
-    this.gameStarter = this.gameStarter.bind(this)
+    this.life = 3;
   }
-  collidedWidth(object1, object2) { }
   
-  gameStarter(e) {
-    
-    switch (e.key) {
-      case "p":
-        return this.start = true;
-      case "i":
-        return this.renderKeys = true;
-      default:
-        return this.start 
-    }
-  }
+
 
   incrementLevel() {
     if (this.point % 5 === 0) {
@@ -26,5 +14,10 @@ export default class Game {
     }
   }
 
- 
+  animate() {
+    this.ctx.font = "600 24px Times"
+    this.ctx.fillText(`Level: ${this.level}`, 50, 50)
+    this.ctx.fillText(`Points: ${this.point}`, 50, 75)
+    this.ctx.fillText(`Life: ${this.life}`, 50, 100)
+  }
 }
